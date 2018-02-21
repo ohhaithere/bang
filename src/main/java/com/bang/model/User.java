@@ -8,10 +8,10 @@ import javax.persistence.Id;
 /**
  * Created by johnnyGrimes on 22/02/2018.
  */
-@Entity
+@Entity(name = "User")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
 
     String name;
