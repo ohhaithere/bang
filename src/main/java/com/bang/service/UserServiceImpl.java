@@ -1,48 +1,47 @@
 package com.bang.service;
 
-import com.bang.dao.UserDao;
 import com.bang.model.User;
+import com.bang.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 /**
  * Created by johnnyGrimes on 22/02/2018.
  */
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao userDao;
+    private UserRepository userRepository;
 
-    @Transactional
+
     @Override
-    public long save(User user) {
-        return userDao.save(user);
+    public User save(User user) {
+        return userRepository.save(user);
     }
 
     @Override
     public User get(long id) {
-        return userDao.get(id);
+        return userRepository.getOne(id);
     }
 
     @Override
     public List<User> list() {
-        return userDao.list();
+        return userRepository.findAll();
     }
 
-    @Transactional
     @Override
     public void update(long id, User user) {
-        userDao.update(id, user);
+        User user2 = userRepository.findOne(id);
+        user2.setName(user.getName());
+        user2.setEmail(user.getEmail());
+        userRepository.save(user2);
     }
 
-    @Transactional
     @Override
     public void delete(long id) {
-        userDao.delete(id);
+        userRepository.delete(id);
     }
 }
