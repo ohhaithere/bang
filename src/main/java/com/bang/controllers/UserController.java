@@ -69,4 +69,13 @@ public class UserController {
         return "Deleted\n";
     }
 
+    @GetMapping(path="/update")
+    public @ResponseBody String updateUser(
+            @RequestParam User user
+    ) {
+        userRepository.save(user);
+
+        return "Updated";
+    }
+
 }
