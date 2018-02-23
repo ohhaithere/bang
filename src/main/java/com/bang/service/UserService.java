@@ -10,7 +10,7 @@ import java.util.List;
 public interface UserService {
     User save(User user);
     User get(long id);
-    List<User> list();
+    Iterable<User> list();
     void update(User user);
     void delete(long id);
 }

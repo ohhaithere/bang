@@ -24,11 +24,11 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User get(long id) {
-        return userRepository.getOne(id);
+        return userRepository.findOne(id);
     }
 
     @Override
-    public List<User> list() {
+    public Iterable<User> list() {
         return userRepository.findAll();
     }
 
