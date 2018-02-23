@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="asuka" target="1.8" />
+      <module name="bang" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>
