@@ -12,7 +12,7 @@ import java.util.Date;
 @Entity(name = "User")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     long id;
 
     String name;
@@ -138,6 +138,9 @@ public class User {
     public User() {
     }
 
+    public User(String name) {
+        this.name = name;
+    }
 
     public String getName() {
         return name;
