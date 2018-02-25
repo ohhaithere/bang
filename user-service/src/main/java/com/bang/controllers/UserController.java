@@ -2,12 +2,10 @@ package com.bang.controllers;
 
 import com.bang.model.User;
 import com.bang.repository.UserRepository;
+import com.bang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 
@@ -16,66 +14,42 @@ import java.util.Date;
  * Created by johnnyGrimes on 23/02/2018.
  */
 @Controller
-@RequestMapping(path="/user")
+@RequestMapping(path="/v1/user")
 public class UserController {
 
     @Autowired
-    UserRepository userRepository;
+    UserService userService;
 
-    @GetMapping(path="/add")
-    public @ResponseBody String addNewUser(
-            @RequestParam String name,
-            @RequestParam String email,
-            @RequestParam Date dateOfBirth,
-            @RequestParam String sex,
-            @RequestParam String role,
-            @RequestParam String country,
-            @RequestParam String city,
-            @RequestParam String photoHref,
-            @RequestParam String aboutText,
-            @RequestParam String cellPhone,
-            @RequestParam int pricePerHour
-    ) {
-        User n = new User();
-
-        n.setName(name);
-        n.setEmail(email);
-        n.setDateOfBirth(dateOfBirth);
-        n.setSex(sex);
-        n.setRole(role);
-        n.setCountry(country);
-        n.setCity(city);
-        n.setPhotoHref(photoHref);
-        n.setAboutText(aboutText);
-        n.setCellphone(cellPhone);
-        n.setPricePerHour(pricePerHour);
-
-        userRepository.save(n);
-
-        return "Saved\n";
+    @RequestMapping(method = RequestMethod.POST)
+    public @ResponseBody User createUser(@RequestBody User user) {
+        User newUser = userService.save(user);
+        return newUser;
     }
 
-    @GetMapping(path="/all")
+    @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody Iterable<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.list();
     }
 
-    @GetMapping(path="/delete")
+    @RequestMapping("/{id}")
+    public @ResponseBody User getUserById(@PathVariable Long id) {
+        return userService.get(id);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE)
     public @ResponseBody String deleteUser(
             @RequestParam  Long id
     ) {
-        userRepository.delete(id);
+        userService.delete(id);
 
         return "Deleted\n";
     }
 
-    @GetMapping(path="/update")
-    public @ResponseBody String updateUser(
-            @RequestParam User user
-    ) {
-        userRepository.save(user);
+    @RequestMapping(method = RequestMethod.PUT)
+    public @ResponseBody User updateUser(@RequestBody User user) {
+        User updatedUser = userService.save(user);
 
-        return "Updated";
+        return updatedUser;
     }
 
 }

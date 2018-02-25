@@ -13,7 +13,7 @@ import java.util.Date;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    Long id;
 
     String name;
 
@@ -35,7 +35,7 @@ public class User {
 
     String cellphone;
 
-    int pricePerHour;
+    Integer pricePerHour;
 
     public User(
             String name,
@@ -48,7 +48,7 @@ public class User {
             String photoHref,
             String aboutText,
             String cellphone,
-            int pricePerHour
+            Integer pricePerHour
     ) {
         this.name = name;
         this.email = email;
@@ -127,11 +127,11 @@ public class User {
         this.cellphone = cellphone;
     }
 
-    public int getPricePerHour() {
+    public Integer getPricePerHour() {
         return pricePerHour;
     }
 
-    public void setPricePerHour(int pricePerHour) {
+    public void setPricePerHour(Integer pricePerHour) {
         this.pricePerHour = pricePerHour;
     }
 
@@ -158,7 +158,7 @@ public class User {
         this.email = email;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 }
