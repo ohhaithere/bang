@@ -14,7 +14,7 @@ import java.util.Date;
  * Created by johnnyGrimes on 23/02/2018.
  */
 @Controller
-@RequestMapping(path="/v1/user")
+@RequestMapping(path="/api/v1/user")
 public class UserController {
 
     @Autowired
