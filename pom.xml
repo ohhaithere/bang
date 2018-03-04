@@ -10,6 +10,7 @@
     <modules>
         <module>user-service</module>
         <module>meeting-service</module>
+        <module>sms-service</module>
     </modules>
     <packaging>pom</packaging>
 

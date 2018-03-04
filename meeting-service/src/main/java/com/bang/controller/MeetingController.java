@@ -1,7 +1,10 @@
 package com.bang.controller;
 
+import com.bang.dto.MeetingDto;
+import com.bang.mapper.MeetingMapper;
 import com.bang.model.Meeting;
 import com.bang.service.MeetingService;
+import fr.xebia.extras.selma.Selma;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -13,37 +16,38 @@ public class MeetingController {
     @Autowired
     MeetingService meetingService;
 
-    @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody Meeting createMeeting(@RequestBody Meeting meeting) {
-        Meeting newMeeting = meetingService.updateMeeting(meeting);
-        return newMeeting;
+    @PostMapping
+    public @ResponseBody MeetingDto createMeeting(@RequestBody Meeting meeting) {
+        Meeting newMeeting = meetingService.createMeeting(meeting);
+        MeetingMapper mapper = Selma.builder(MeetingMapper.class).build();
+        MeetingDto meetingDto = mapper.asMeetingDto(newMeeting);
+        return meetingDto;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
+    @GetMapping
     public @ResponseBody
     Iterable<Meeting> getAllMeetings() {
         return meetingService.getAllMeetings();
     }
 
-    @RequestMapping("/{id}")
+    @GetMapping("/{id}")
     public @ResponseBody Meeting getMeetingById(@PathVariable Long id) {
         return meetingService.getMeeting(id);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE)
-    public @ResponseBody String deleteMeeting(
-            @RequestParam  Long id
-    ) {
+    @DeleteMapping
+    public @ResponseBody String deleteMeeting(@RequestParam  Long id) {
         meetingService.deleteMeeting(id);
-
         return "Deleted\n";
     }
 
-    @RequestMapping(method = RequestMethod.PUT)
-    public @ResponseBody Meeting updateMeeting(@RequestBody Meeting Meeting) {
+    @PutMapping
+    public @ResponseBody MeetingDto updateMeeting(@RequestBody Meeting Meeting) {
         Meeting updatedMeeting = meetingService.updateMeeting(Meeting);
+        MeetingMapper mapper = Selma.builder(MeetingMapper.class).build();
+        MeetingDto meetingDto = mapper.asMeetingDto(updatedMeeting);
 
-        return updatedMeeting;
+        return meetingDto;
     }
 
 }

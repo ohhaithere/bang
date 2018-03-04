@@ -1,16 +1,9 @@
-package com.bang.model;
+package com.bang.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import java.util.Date;
 
-@Entity(name = "Meeting")
-public class Meeting {
+public class MeetingDto {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     Long id;
     String status;
     Date creationDate;
@@ -20,7 +13,6 @@ public class Meeting {
     Long giverId;
     Integer giversRate;
     Integer takersRate;
-
 
     public Long getId() {
         return id;
@@ -46,20 +38,20 @@ public class Meeting {
         this.creationDate = creationDate;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
     public String getReward() {
         return reward;
     }
 
     public void setReward(String reward) {
         this.reward = reward;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getTakerId() {

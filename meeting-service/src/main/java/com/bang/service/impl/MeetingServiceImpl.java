@@ -36,6 +36,6 @@ public class MeetingServiceImpl implements MeetingService{
 
     @Override
     public void deleteMeeting(Long id) {
-
+        meetingRepository.delete(id);
     }
 }
