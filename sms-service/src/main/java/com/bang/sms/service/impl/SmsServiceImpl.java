@@ -27,4 +27,14 @@ public class SmsServiceImpl implements SmsService{
     public void deleteSms(Long id) {
         smsRepository.delete(id);
     }
+
+    @Override
+    public Sms getByPhoneAndCode(String phone, Integer code) {
+        return smsRepository.findSmsByPhoneAndCode(phone, code);
+    }
+
+    @Override
+    public Sms updateSms(Sms sms) {
+        return smsRepository.save(sms);
+    }
 }

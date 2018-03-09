@@ -12,4 +12,8 @@ public interface SmsService {
 
     void deleteSms(Long id);
 
+    Sms getByPhoneAndCode(String phone, Integer code);
+
+    Sms updateSms(Sms sms);
+
 }

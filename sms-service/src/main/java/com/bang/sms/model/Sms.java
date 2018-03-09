@@ -13,6 +13,11 @@ public class Sms {
     Long id;
     String phone;
     Integer code;
+    Boolean activated;
+
+    public Sms(){
+        this.activated = false;
+    }
 
     public Long getId() {
         return id;
@@ -38,4 +43,11 @@ public class Sms {
         this.code = code;
     }
 
+    public Boolean getActivated() {
+        return activated;
+    }
+
+    public void setActivated(Boolean activated) {
+        this.activated = activated;
+    }
 }
