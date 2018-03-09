@@ -1,6 +1,6 @@
 package com.bang.service.impl;
 
-import com.bang.model.MeetingResponse;
+import com.bang.model.MeetingReply;
 import com.bang.repository.MeetingResponseRepository;
 import com.bang.service.MeetingResponseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,22 +13,22 @@ public class MeetingResponseServiceImpl implements MeetingResponseService{
     MeetingResponseRepository meetingResponseRepository;
 
     @Override
-    public MeetingResponse createMeetingResponse(MeetingResponse meetingResponse) {
-        return meetingResponseRepository.save(meetingResponse);
+    public MeetingReply createMeetingResponse(MeetingReply meetingReply) {
+        return meetingResponseRepository.save(meetingReply);
     }
 
     @Override
-    public MeetingResponse updateMeetingResponse(MeetingResponse meetingResponse) {
-        return meetingResponseRepository.save(meetingResponse);
+    public MeetingReply updateMeetingResponse(MeetingReply meetingReply) {
+        return meetingResponseRepository.save(meetingReply);
     }
 
     @Override
-    public MeetingResponse getMeetingResponse(Long id) {
+    public MeetingReply getMeetingResponse(Long id) {
         return meetingResponseRepository.findOne(id);
     }
 
     @Override
-    public Iterable<MeetingResponse> getAllMeetingResponses() {
+    public Iterable<MeetingReply> getAllMeetingResponses() {
         return meetingResponseRepository.findAll();
     }
 

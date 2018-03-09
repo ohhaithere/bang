@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 @Service
 public class MeetingServiceImpl implements MeetingService{
@@ -16,6 +17,7 @@ public class MeetingServiceImpl implements MeetingService{
 
     @Override
     public Meeting createMeeting(Meeting meeting) {
+        meeting.setCreationDate(new Date());
         return meetingRepository.save(meeting);
     }
 

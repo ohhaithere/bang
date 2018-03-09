@@ -2,7 +2,7 @@ package com.bang.controller;
 
 import com.bang.dto.MeetingResponseDto;
 import com.bang.mapper.MeetingResponseMapper;
-import com.bang.model.MeetingResponse;
+import com.bang.model.MeetingReply;
 import com.bang.service.MeetingResponseService;
 import fr.xebia.extras.selma.Selma;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,23 +18,24 @@ public class MeetingResponseController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
-    MeetingResponseDto createMeetingResponse(@RequestBody MeetingResponse meetingResponse) {
-        MeetingResponse newMeetingResponse = meetingResponseService.createMeetingResponse(meetingResponse);
+    MeetingResponseDto createMeetingResponse(@RequestBody MeetingReply meetingReply) {
+        MeetingReply newMeetingReply = meetingResponseService.createMeetingResponse(meetingReply);
 
         MeetingResponseMapper mapper = Selma.builder(MeetingResponseMapper.class).build();
-        MeetingResponseDto meetingResponseDto = mapper.asMeetingResponseDto(newMeetingResponse);
+        MeetingResponseDto meetingResponseDto = mapper.asMeetingResponseDto(newMeetingReply);
 
         return meetingResponseDto;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public @ResponseBody
-    Iterable<MeetingResponse> getAllMeetingResponses() {
+    Iterable<MeetingReply> getAllMeetingResponses() {
         return meetingResponseService.getAllMeetingResponses();
     }
 
-    @RequestMapping("/{id}")
-    public @ResponseBody MeetingResponse getMeetingResponseById(@PathVariable Long id) {
+    @GetMapping("/{id}")
+    public @ResponseBody
+    MeetingReply getMeetingResponseById(@PathVariable Long id) {
         return meetingResponseService.getMeetingResponse(id);
     }
 
@@ -45,11 +46,11 @@ public class MeetingResponseController {
     }
 
     @RequestMapping(method = RequestMethod.PUT)
-    public @ResponseBody MeetingResponseDto updateMeetingResponse(@RequestBody MeetingResponse meetingResponseeeting) {
-        MeetingResponse updatedMeetingResponse = meetingResponseService.updateMeetingResponse(meetingResponseeeting);
+    public @ResponseBody MeetingResponseDto updateMeetingResponse(@RequestBody MeetingReply meetingResponseeeting) {
+        MeetingReply updatedMeetingReply = meetingResponseService.updateMeetingResponse(meetingResponseeeting);
 
         MeetingResponseMapper mapper = Selma.builder(MeetingResponseMapper.class).build();
-        MeetingResponseDto meetingResponseDto = mapper.asMeetingResponseDto(updatedMeetingResponse);
+        MeetingResponseDto meetingResponseDto = mapper.asMeetingResponseDto(updatedMeetingReply);
 
         return meetingResponseDto;
     }

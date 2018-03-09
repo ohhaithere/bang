@@ -1,18 +1,18 @@
 package com.bang.service;
 
-import com.bang.model.MeetingResponse;
+import com.bang.model.MeetingReply;
 import org.springframework.stereotype.Service;
 
 @Service
 public interface MeetingResponseService {
 
-    MeetingResponse createMeetingResponse(MeetingResponse meetingResponse);
+    MeetingReply createMeetingResponse(MeetingReply meetingReply);
 
-    MeetingResponse updateMeetingResponse(MeetingResponse meetingResponse);
+    MeetingReply updateMeetingResponse(MeetingReply meetingReply);
 
-    MeetingResponse getMeetingResponse(Long id);
+    MeetingReply getMeetingResponse(Long id);
 
-    Iterable<MeetingResponse> getAllMeetingResponses();
+    Iterable<MeetingReply> getAllMeetingResponses();
 
     void deleteMeetingResponse(Long id);
 
