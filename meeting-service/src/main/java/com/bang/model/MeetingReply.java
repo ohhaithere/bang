@@ -14,7 +14,7 @@ public class MeetingReply {
     Long meetingId;
     String reward;
     String status;
-    Long usedId;
+    Long userId;
 
     public Long getId() {
         return id;
@@ -48,11 +48,11 @@ public class MeetingReply {
         this.status = status;
     }
 
-    public Long getUsedId() {
-        return usedId;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUsedId(Long usedId) {
-        this.usedId = usedId;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
