@@ -11,6 +11,7 @@
         <module>user-service</module>
         <module>meeting-service</module>
         <module>sms-service</module>
+        <module>discovery</module>
     </modules>
     <packaging>pom</packaging>
 

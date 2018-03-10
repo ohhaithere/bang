@@ -35,7 +35,7 @@ public class User {
 
     String cellphone;
 
-    Integer pricePerHour;
+    Integer desiredReward;
 
     public User(
             String name,
@@ -48,7 +48,7 @@ public class User {
             String photoHref,
             String aboutText,
             String cellphone,
-            Integer pricePerHour
+            Integer desiredReward
     ) {
         this.name = name;
         this.email = email;
@@ -60,7 +60,7 @@ public class User {
         this.photoHref = photoHref;
         this.aboutText = aboutText;
         this.cellphone = cellphone;
-        this.pricePerHour = pricePerHour;
+        this.desiredReward = desiredReward;
     }
 
     public Date getDateOfBirth() {
@@ -127,12 +127,12 @@ public class User {
         this.cellphone = cellphone;
     }
 
-    public Integer getPricePerHour() {
-        return pricePerHour;
+    public Integer getDesiredReward() {
+        return desiredReward;
     }
 
-    public void setPricePerHour(Integer pricePerHour) {
-        this.pricePerHour = pricePerHour;
+    public void setDesiredReward(Integer desiredReward) {
+        this.desiredReward = desiredReward;
     }
 
     public User() {
