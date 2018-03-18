@@ -20,3 +20,14 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+meeting-service/gradlew
+meeting-service/gradlew.bat
+meeting-service/.gradle/3.5-rc-2/file-changes/last-build.bin
+meeting-service/.gradle/3.5-rc-2/taskHistory/fileHashes.bin
+meeting-service/.gradle/3.5-rc-2/taskHistory/fileSnapshots.bin
+meeting-service/.gradle/3.5-rc-2/taskHistory/taskHistory.bin
+meeting-service/.gradle/3.5-rc-2/taskHistory/taskHistory.lock
+meeting-service/.gradle/buildOutputCleanup/built.bin
+meeting-service/.gradle/buildOutputCleanup/cache.properties
+meeting-service/.gradle/buildOutputCleanup/cache.properties.lock
+meeting-service/gradle/wrapper/gradle-wrapper.properties

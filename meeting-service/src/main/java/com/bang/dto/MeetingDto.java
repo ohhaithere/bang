@@ -7,7 +7,7 @@ public class MeetingDto {
     Long id;
     String status;
     Date creationDate;
-    String reward;
+    String counterOffer;
     String description;
     Long takerId;
     Long giverId;
@@ -38,12 +38,12 @@ public class MeetingDto {
         this.creationDate = creationDate;
     }
 
-    public String getReward() {
-        return reward;
+    public String getCounterOffer() {
+        return counterOffer;
     }
 
-    public void setReward(String reward) {
-        this.reward = reward;
+    public void setCounterOffer(String counterOffer) {
+        this.counterOffer = counterOffer;
     }
 
     public String getDescription() {
