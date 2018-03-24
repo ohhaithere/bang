@@ -1,6 +1,7 @@
 package com.bang.controllers;
 
 import com.bang.model.User;
+import com.bang.model.UserTypes;
 import com.bang.repository.UserRepository;
 import com.bang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,11 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody User createUser(@RequestBody User user) {
+        if((!user.getRole().equals(UserTypes.Role.Giver) || (!user.getRole().equals(UserTypes.Role.Taker))))
+            return null;
+        if((!user.getSex().equals(UserTypes.Sex.Female) || (!user.getSex().equals(UserTypes.Sex.Male))))
+            return null;
+
         User newUser = userService.save(user);
         return newUser;
     }
@@ -38,8 +44,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.DELETE)
     public @ResponseBody String deleteUser(
-            @RequestParam  Long id
-    ) {
+            @RequestParam  Long id) {
         userService.delete(id);
 
         return "Deleted\n";
@@ -50,6 +55,12 @@ public class UserController {
         User updatedUser = userService.save(user);
 
         return updatedUser;
+    }
+
+    @GetMapping("/auth/{cellphone}")
+    public @ResponseBody User getUserByCellphone(@PathVariable String cellphone){
+        User user = new User();
+        return user;
     }
 
 }

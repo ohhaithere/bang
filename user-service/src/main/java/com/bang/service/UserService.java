@@ -13,4 +13,5 @@ public interface UserService {
     Iterable<User> list();
     void update(User user);
     void delete(long id);
+    User getByCellphone(String cellphone);
 }
