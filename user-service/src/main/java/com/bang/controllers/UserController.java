@@ -23,11 +23,10 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody User createUser(@RequestBody User user) {
-        if((!user.getRole().equals(UserTypes.Role.Giver) || (!user.getRole().equals(UserTypes.Role.Taker))))
+        /* if((!user.getRole().equals(UserTypes.Role.Giver) || (!user.getRole().equals(UserTypes.Role.Taker))))
+            return null; */
+        if((!user.getSex().equals(UserTypes.Sex.FEMALE.toString()) || (!user.getSex().equals(UserTypes.Sex.MALE.toString()))))
             return null;
-        if((!user.getSex().equals(UserTypes.Sex.Female) || (!user.getSex().equals(UserTypes.Sex.Male))))
-            return null;
-
         User newUser = userService.save(user);
         return newUser;
     }

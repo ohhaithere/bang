@@ -18,7 +18,7 @@
 #
 runtime: java
 env: flex
-service: meeting-service
+service: meetings-service
 
 runtime_config:  # Optional
   jdk: openjdk8

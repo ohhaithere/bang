@@ -1,0 +1,30 @@
+server:
+  port: 8021
+
+spring:
+  application:
+    name: gateway
+
+zuul:
+  routes:
+    golden-report-lkz-report:
+      path: /grapi/v1/lkz-report/**
+      url: http://ecse00100c7b.epam.com:30020/api/v1/
+    golden-report-lkz-documents:
+      path: /grapi/v1/lkz-documents/**
+      url: http://ecse00100c7b.epam.com:30040/api/v1/
+    golden-report-main:
+      path: /grapi/v1/**
+      url: http://ecse00100c7b.epam.com:30017/grapi/v1/
+    golden-report-main-serviceid:
+      path: /grapi/v1/**
+      serviceId: http://ecse00100c7b.epam.com:30017/grapi/v1/
+
+
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://ecse00100c7b.epam.com:32761/eureka}

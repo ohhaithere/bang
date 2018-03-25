@@ -18,7 +18,7 @@
 #
 runtime: java
 env: flex
-service: discovery-service
+service: registry-service
 
 runtime_config:  # Optional
   jdk: openjdk8
