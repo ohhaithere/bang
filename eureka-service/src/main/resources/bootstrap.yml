@@ -10,7 +10,3 @@ eureka:
     fetchRegistry: false
     server:
       waitTimeInMsWhenSyncEmpty: 0
-
-
-server:
-  port: 8761

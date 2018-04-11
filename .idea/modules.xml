@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/user-service/asuka.iml" filepath="$PROJECT_DIR$/user-service/asuka.iml" />
       <module fileurl="file://$PROJECT_DIR$/bang.iml" filepath="$PROJECT_DIR$/bang.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-service/eureka-service.iml" filepath="$PROJECT_DIR$/eureka-service/eureka-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway-service/gateway-service.iml" filepath="$PROJECT_DIR$/gateway-service/gateway-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/meeting-service/meeting-service.iml" filepath="$PROJECT_DIR$/meeting-service/meeting-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/sms-service/sms-service.iml" filepath="$PROJECT_DIR$/sms-service/sms-service.iml" />
     </modules>

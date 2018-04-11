@@ -1,32 +1,20 @@
 package com.bang.controllers;
 
 import com.bang.model.User;
-import com.bang.model.UserTypes;
-import com.bang.repository.UserRepository;
 import com.bang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
-
-
-/**
- * Created by johnnyGrimes on 23/02/2018.
- */
 @Controller
-@RequestMapping(path="/api/v1/user")
+@RequestMapping(path = "/api/v1/user")
 public class UserController {
-
     @Autowired
     UserService userService;
 
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody User createUser(@RequestBody User user) {
-        /* if((!user.getRole().equals(UserTypes.Role.Giver) || (!user.getRole().equals(UserTypes.Role.Taker))))
-            return null; */
-        if((!user.getSex().equals(UserTypes.Sex.FEMALE.toString()) || (!user.getSex().equals(UserTypes.Sex.MALE.toString()))))
-            return null;
+    public @ResponseBody
+    User createUser(@RequestBody User user) {
         User newUser = userService.save(user);
         return newUser;
     }
@@ -58,8 +46,12 @@ public class UserController {
 
     @GetMapping("/auth/{cellphone}")
     public @ResponseBody User getUserByCellphone(@PathVariable String cellphone){
-        User user = new User();
-        return user;
+        return userService.getByCellphone(cellphone);
     }
+
+   /* @PutMapping("/uploadPhoto/{id}")
+    public User uploadUserPhoto((@RequestParam("file") MultipartFile file){
+
+    }*/
 
 }

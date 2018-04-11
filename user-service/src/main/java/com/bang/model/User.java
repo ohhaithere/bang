@@ -37,6 +37,8 @@ public class User {
 
     Integer desiredReward;
 
+    String userLink;
+
     public User(
             String name,
             String email,
@@ -160,5 +162,17 @@ public class User {
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUserLink() {
+        return userLink;
+    }
+
+    public void setUserLink(String userLink) {
+        this.userLink = userLink;
     }
 }
