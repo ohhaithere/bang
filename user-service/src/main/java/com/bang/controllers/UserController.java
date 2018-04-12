@@ -5,12 +5,20 @@ import com.bang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 @RequestMapping(path = "/api/v1/user")
 public class UserController {
     @Autowired
     UserService userService;
+
+    private static String UPLOADED_FOLDER = "/";
 
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
@@ -49,9 +57,17 @@ public class UserController {
         return userService.getByCellphone(cellphone);
     }
 
-   /* @PutMapping("/uploadPhoto/{id}")
-    public User uploadUserPhoto((@RequestParam("file") MultipartFile file){
+    @PutMapping("/uploadPhoto/{id}")
+    public User uploadUserPhoto(@PathVariable Long id, @RequestParam("file") MultipartFile file) throws IOException {
+        byte[] bytes = file.getBytes();
+        User user = userService.get(id);
+        Path path = Paths.get(UPLOADED_FOLDER + user.getId().toString());
+        Files.write(path, bytes);
 
-    }*/
+
+        user.setPhotoHref(path + file.getOriginalFilename());
+        userService.save(user);
+        return user;
+    }
 
 }

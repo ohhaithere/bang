@@ -27,7 +27,7 @@ services:
         - 8761:8761
 
   user-service:
-        build: asuka
+        build: user-service
         restart: always
         ports:
           - 3000:3000

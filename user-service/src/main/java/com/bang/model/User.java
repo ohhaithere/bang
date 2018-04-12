@@ -175,4 +175,5 @@ public class User {
     public void setUserLink(String userLink) {
         this.userLink = userLink;
     }
+
 }
