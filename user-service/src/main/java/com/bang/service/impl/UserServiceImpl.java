@@ -6,8 +6,6 @@ import com.bang.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 /**
  * Created by johnnyGrimes on 22/02/2018.
  */

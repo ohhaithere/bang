@@ -23,8 +23,7 @@ public class UserController {
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
     User createUser(@RequestBody User user) {
-        User newUser = userService.save(user);
-        return newUser;
+        return userService.save(user);
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -47,9 +46,7 @@ public class UserController {
 
     @RequestMapping(method = RequestMethod.PUT)
     public @ResponseBody User updateUser(@RequestBody User user) {
-        User updatedUser = userService.save(user);
-
-        return updatedUser;
+        return userService.save(user);
     }
 
     @GetMapping("/auth/{cellphone}")

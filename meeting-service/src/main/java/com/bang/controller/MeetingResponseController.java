@@ -22,9 +22,8 @@ public class MeetingResponseController {
         MeetingReply newMeetingReply = meetingResponseService.createMeetingResponse(meetingReply);
 
         MeetingResponseMapper mapper = Selma.builder(MeetingResponseMapper.class).build();
-        MeetingResponseDto meetingResponseDto = mapper.asMeetingResponseDto(newMeetingReply);
 
-        return meetingResponseDto;
+        return mapper.asMeetingResponseDto(newMeetingReply);
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -50,9 +49,8 @@ public class MeetingResponseController {
         MeetingReply updatedMeetingReply = meetingResponseService.updateMeetingResponse(meetingResponseeeting);
 
         MeetingResponseMapper mapper = Selma.builder(MeetingResponseMapper.class).build();
-        MeetingResponseDto meetingResponseDto = mapper.asMeetingResponseDto(updatedMeetingReply);
 
-        return meetingResponseDto;
+        return mapper.asMeetingResponseDto(updatedMeetingReply);
     }
 
 }

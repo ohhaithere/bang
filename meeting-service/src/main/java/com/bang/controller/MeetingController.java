@@ -20,8 +20,7 @@ public class MeetingController {
     public @ResponseBody MeetingDto createMeeting(@RequestBody Meeting meeting) {
         Meeting newMeeting = meetingService.createMeeting(meeting);
         MeetingMapper mapper = Selma.builder(MeetingMapper.class).build();
-        MeetingDto meetingDto = mapper.asMeetingDto(newMeeting);
-        return meetingDto;
+        return mapper.asMeetingDto(newMeeting);
     }
 
     @GetMapping
@@ -42,12 +41,10 @@ public class MeetingController {
     }
 
     @PutMapping
-    public @ResponseBody MeetingDto updateMeeting(@RequestBody Meeting Meeting) {
-        Meeting updatedMeeting = meetingService.updateMeeting(Meeting);
+    public @ResponseBody MeetingDto updateMeeting(@RequestBody Meeting meeting) {
+        Meeting updatedMeeting = meetingService.updateMeeting(meeting);
         MeetingMapper mapper = Selma.builder(MeetingMapper.class).build();
-        MeetingDto meetingDto = mapper.asMeetingDto(updatedMeeting);
-
-        return meetingDto;
+        return mapper.asMeetingDto(updatedMeeting);
     }
 
 }

@@ -14,4 +14,5 @@ public class Asuka {
     public static void main(String[] args) {
         SpringApplication.run(Asuka.class, args);
     }
+
 }

@@ -5,19 +5,20 @@ public class UserTypes {
     public enum Sex {
         MALE, FEMALE;
 
+        @Override
         public String toString(){
-            switch(this){
-                case MALE :
-                    return "Male";
-                case FEMALE :
-                    return "Female";
+            if(this == MALE) {
+                return "Male";
             }
-            return null;
+            if(this == FEMALE){
+                return "Female";
+            }
+            return "";
         }
     }
 
     public enum Role {
-        Giver, Taker
+        GIVER, TAKER
     }
 
 }

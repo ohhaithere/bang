@@ -39,32 +39,6 @@ public class User {
 
     String userLink;
 
-    public User(
-            String name,
-            String email,
-            Date dateOfBirth,
-            String sex,
-            String role,
-            String country,
-            String city,
-            String photoHref,
-            String aboutText,
-            String cellphone,
-            Integer desiredReward
-    ) {
-        this.name = name;
-        this.email = email;
-        this.dateOfBirth = dateOfBirth;
-        this.sex = sex;
-        this.role = role;
-        this.country = country;
-        this.city = city;
-        this.photoHref = photoHref;
-        this.aboutText = aboutText;
-        this.cellphone = cellphone;
-        this.desiredReward = desiredReward;
-    }
-
     public Date getDateOfBirth() {
         return dateOfBirth;
     }

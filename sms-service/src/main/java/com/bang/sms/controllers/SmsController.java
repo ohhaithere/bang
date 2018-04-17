@@ -5,7 +5,6 @@ import com.bang.sms.service.SmsService;
 import com.twilio.sdk.TwilioRestClient;
 import com.twilio.sdk.TwilioRestException;
 import com.twilio.sdk.resource.factory.MessageFactory;
-import com.twilio.sdk.resource.instance.Message;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +28,6 @@ public class SmsController {
 
     public static final String ACCOUNT_SID = "AC404b3484b05cb2ef8e508428a7885b71";
     public static final String AUTH_TOKEN = "7d9c55542e0cce9aca5ae861ce3d38e1";
-    //public static final String TWILIO_NUMBER = "+15555555555";
 
     @GetMapping("/send/{phoneNumber}")
     public @ResponseBody Sms sendSms(@PathVariable String phoneNumber) throws TwilioRestException {
@@ -38,7 +36,7 @@ public class SmsController {
         sms.setPhone(phoneNumber);
         sms.setCode(ThreadLocalRandom.current().nextInt(1000, 10001));
 
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
+        List<NameValuePair> params = new ArrayList<>();
         params.add(new BasicNameValuePair("Body", sms.getCode().toString()));
         params.add(new BasicNameValuePair("To", phoneNumber)); //Add real number here
         params.add(new BasicNameValuePair("From", "+12133221714"));
