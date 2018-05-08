@@ -44,4 +44,10 @@ services:
             ports:
               - 3003:3003
 
+  config-service:
+              build: config-service
+              restart: always
+              ports:
+                - 8888:8888
+
 

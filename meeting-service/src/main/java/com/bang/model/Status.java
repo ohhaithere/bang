@@ -1,8 +1,17 @@
 package com.bang.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity
+@Data
+@ToString
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "status")
 public class Status {
 
@@ -11,19 +20,4 @@ public class Status {
     @Column(name = "statusname")
     String statusName;
 
-    public String getStatusName() {
-        return statusName;
-    }
-
-    public void setStatusName(String statusName) {
-        this.statusName = statusName;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

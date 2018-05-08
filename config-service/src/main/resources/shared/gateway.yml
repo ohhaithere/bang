@@ -1,0 +1,35 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+server:
+  port: 5000
+
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+    routes:
+      user-service:
+            path: /users/**
+            serviceId: user-service
+            stripPrefix: false
+            sensitiveHeaders:
+
+      routine-service:
+            path: /routine/**
+            serviceId: routine-service
+            url: http://routine-service:3001
+            stripPrefix: false
+            sensitiveHeaders:

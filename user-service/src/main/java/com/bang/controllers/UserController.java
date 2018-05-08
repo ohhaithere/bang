@@ -54,7 +54,7 @@ public class UserController {
         return userService.getByCellphone(cellphone);
     }
 
-    @PutMapping("/uploadPhoto/{id}")
+    @PutMapping("/{id}/uploadPhoto/")
     public User uploadUserPhoto(@PathVariable Long id, @RequestParam("file") MultipartFile file) throws IOException {
         byte[] bytes = file.getBytes();
         User user = userService.get(id);
