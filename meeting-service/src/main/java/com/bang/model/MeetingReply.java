@@ -19,10 +19,10 @@ public class MeetingReply {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    Long meetingId;
-    String reward;
-    String status;
-    Long userId;
+    private Long id;
+    private Long meetingId;
+    private String reward;
+    private String status;
+    private Long userId;
 
 }

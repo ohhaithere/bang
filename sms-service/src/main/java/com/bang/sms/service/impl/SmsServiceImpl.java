@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class SmsServiceImpl implements SmsService{
 
     @Autowired
-    SmsRepository smsRepository;
+    private SmsRepository smsRepository;
 
 
     @Override

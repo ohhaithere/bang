@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class StatusServiceImpl implements StatusService{
 
     @Autowired
-    StatusRepository statusRepository;
+    private StatusRepository statusRepository;
 
     @Override
     public Iterable<Status> getAllStatuses() {

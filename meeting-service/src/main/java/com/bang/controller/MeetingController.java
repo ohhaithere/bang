@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 public class MeetingController {
 
     @Autowired
-    MeetingService meetingService;
+    private MeetingService meetingService;
 
     @PostMapping
     public @ResponseBody MeetingDto createMeeting(@RequestBody Meeting meeting) {

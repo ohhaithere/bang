@@ -24,7 +24,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class SmsController {
 
     @Autowired
-    SmsService smsService;
+    private SmsService smsService;
 
     public static final String ACCOUNT_SID = "AC404b3484b05cb2ef8e508428a7885b71";
     public static final String AUTH_TOKEN = "7d9c55542e0cce9aca5ae861ce3d38e1";

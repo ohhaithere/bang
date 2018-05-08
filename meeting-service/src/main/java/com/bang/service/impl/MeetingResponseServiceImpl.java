@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 public class MeetingResponseServiceImpl implements MeetingResponseService{
 
     @Autowired
-    MeetingResponseRepository meetingResponseRepository;
+    private MeetingResponseRepository meetingResponseRepository;
 
     @Override
     public MeetingReply createMeetingResponse(MeetingReply meetingReply) {

@@ -16,8 +16,8 @@ import javax.persistence.*;
 public class Status {
 
     @Id
-    Integer id;
+    private Integer id;
     @Column(name = "statusname")
-    String statusName;
+    private String statusName;
 
 }

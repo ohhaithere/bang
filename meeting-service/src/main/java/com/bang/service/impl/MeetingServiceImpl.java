@@ -12,7 +12,7 @@ import java.util.Date;
 public class MeetingServiceImpl implements MeetingService{
 
     @Autowired
-    MeetingRepository meetingRepository;
+    private MeetingRepository meetingRepository;
 
     @Override
     public Meeting createMeeting(Meeting meeting) {

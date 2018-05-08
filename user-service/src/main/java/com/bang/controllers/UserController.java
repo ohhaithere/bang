@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 @RequestMapping(path = "/api/v1/user")
 public class UserController {
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     private static String UPLOADED_FOLDER = "/";
 

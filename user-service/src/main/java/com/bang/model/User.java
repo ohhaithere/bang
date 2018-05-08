@@ -22,18 +22,18 @@ import java.util.Date;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String name;
-    String email;
-    Date dateOfBirth;
-    String sex;
-    String role;
-    String country;
-    String city;
-    String photoHref;
-    String aboutText;
-    String cellphone;
-    Integer desiredReward;
-    String userLink;
+    private Long id;
+    private String name;
+    private String email;
+    private Date dateOfBirth;
+    private String sex;
+    private String role;
+    private String country;
+    private String city;
+    private String photoHref;
+    private String aboutText;
+    private String cellphone;
+    private Integer desiredReward;
+    private String userLink;
 
 }

@@ -13,13 +13,13 @@ import java.util.Date;
 @NoArgsConstructor
 public class MeetingDto {
 
-    Long id;
-    String status;
-    Date creationDate;
-    String counterOffer;
-    String description;
-    Long takerId;
-    Long giverId;
-    Integer giversRate;
-    Integer takersRate;
+    private Long id;
+    private String status;
+    private Date creationDate;
+    private String counterOffer;
+    private String description;
+    private Long takerId;
+    private Long giverId;
+    private Integer giversRate;
+    private Integer takersRate;
 }

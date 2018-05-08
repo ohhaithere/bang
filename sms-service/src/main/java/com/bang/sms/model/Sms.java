@@ -19,9 +19,9 @@ public class Sms {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
-    String phone;
-    Integer code;
-    Boolean activated;
+    private Long id;
+    private String phone;
+    private Integer code;
+    private Boolean activated;
 
 }

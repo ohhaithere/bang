@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class StatusController {
 
     @Autowired
-    StatusService statusService;
+    private StatusService statusService;
 
 
     @GetMapping
