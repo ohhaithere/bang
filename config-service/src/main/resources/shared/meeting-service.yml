@@ -1,2 +1,16 @@
 server:
   port: 3002
+
+spring:
+  application:
+    name: meeting-service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://PostgreSQL:5432/bang
+    username: test
+    password: 123
+    schema: classpath:scripts/*.sql
+    initialize: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop

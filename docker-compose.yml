@@ -9,18 +9,12 @@ services:
       - DEBUG=false
       - DB_USER=test
       - DB_PASS=123
-      - DB_NAME=test
+      - DB_NAME=bang
 
     volumes:
       - /srv/docker/postgresql:/var/lib/postgresql
 
-  gateway-service:
-      build: gateway-service
-      restart: always
-      ports:
-       - 5000:5000
-
-  eureka-service:
+  registry:
       build: eureka-service
       restart: always
       ports:
@@ -30,21 +24,21 @@ services:
         build: user-service
         restart: always
         ports:
-          - 3000:3000
+          - 3001:3001
 
   sms-service:
           build: sms-service
           restart: always
           ports:
-            - 3002:3002
+            - 3003:3003
 
   meeting-service:
             build: meeting-service
             restart: always
             ports:
-              - 3003:3003
+              - 3002:3002
 
-  config-service:
+  config:
               build: config-service
               restart: always
               ports:

@@ -11,6 +11,9 @@
         <module>user-service</module>
         <module>meeting-service</module>
         <module>sms-service</module>
+        <module>config-service</module>
+        <module>eureka-service</module>
+        <module>gateway-service</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -54,18 +57,7 @@
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maveplugin</artifactId>
-                <version>1.5.2.RELEASE</version>
-                <configuration>
-                    <addResources>true</addResources>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>

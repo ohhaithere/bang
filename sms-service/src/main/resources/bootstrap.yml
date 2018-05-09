@@ -1,8 +1,12 @@
 spring:
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:test;
-    initialize: true
+  application:
+    name: sms-service
+  cloud:
+    config:
+      uri: http://config:8888
+      fail-fast: true
+      password: test
+      username: user
 
 eureka:
   client:
