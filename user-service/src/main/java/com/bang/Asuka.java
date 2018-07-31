@@ -8,8 +8,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * Created by johnnyGrimes on 23/02/2018.
  */
 @SpringBootApplication
-@EnableConfigurationProperties
-@EnableDiscoveryClient
 public class Asuka {
 
     public static void main(String[] args) {

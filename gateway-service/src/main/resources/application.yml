@@ -1,0 +1,23 @@
+server:
+  port: 5000
+
+spring:
+  application:
+    name: gateway
+
+zuul:
+  routes:
+    user-service:
+      path: /api/v1/users/**
+      url: http://user-service.us-east-2.elasticbeanstalk.com/api/v1/user
+    sms-service:
+      path: /users/**
+      url: http://sms-service.us-east-2.elasticbeanstalk.com/api/v1/user
+    meeting-service:
+          path: /users/**
+          url: http://sms-service.us-east-2.elasticbeanstalk.com/api/v1/user
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://registry.us-east-2.elasticbeanstalk.com/eureka
