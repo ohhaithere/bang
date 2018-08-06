@@ -11,11 +11,17 @@ zuul:
       path: /api/v1/users/**
       url: http://user-service.us-east-2.elasticbeanstalk.com/api/v1/user
     sms-service:
-      path: /users/**
-      url: http://sms-service.us-east-2.elasticbeanstalk.com/api/v1/user
-    meeting-service:
-          path: /users/**
-          url: http://sms-service.us-east-2.elasticbeanstalk.com/api/v1/user
+      path: /api/v1/sms/**
+      url: http://sms-service.us-east-2.elasticbeanstalk.com/api/v1/sms
+    meeting:
+      path: /api/v1/meeting/**
+      url: http://meeting-service.us-east-2.elasticbeanstalk.com/api/v1/meeting
+    meeting:
+      path: /api/v1/meetingResponse/**
+      url: http://meeting-service.us-east-2.elasticbeanstalk.com/api/v1/meetingResponse
+    status:
+      path: /api/v1/status/**
+      url: http://meeting-service.us-east-2.elasticbeanstalk.com/api/v1/status
 
 eureka:
   client:

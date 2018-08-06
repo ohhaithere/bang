@@ -1,47 +1,19 @@
 version: '2'
 services:
-  PostgreSQL:
-    restart: always
-    image: sameersbn/postgresql:9.6-2
-    ports:
-      - "5432:5432"
-    environment:
-      - DEBUG=false
-      - DB_USER=test
-      - DB_PASS=123
-      - DB_NAME=bang
-
-    volumes:
-      - /srv/docker/postgresql:/var/lib/postgresql
-
-  registry:
-      build: eureka-service
-      restart: always
-      ports:
-        - 8761:8761
-
   user-service:
-        build: user-service
-        restart: always
-        ports:
-          - 3001:3001
-
+    build: user-service
+    restart: always
+    ports:
+      - 5000:5000
   sms-service:
-          build: sms-service
-          restart: always
-          ports:
-            - 3003:3003
-
+    build: sms-service
+    restart: always
+    ports:
+      - 3000:3000
   meeting-service:
-            build: meeting-service
-            restart: always
-            ports:
-              - 3002:3002
-
-  config:
-              build: config-service
-              restart: always
-              ports:
-                - 8888:8888
+    build: meeting-service
+    restart: always
+    ports:
+      - 4000:4000
 
 
