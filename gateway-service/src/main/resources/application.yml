@@ -1,5 +1,5 @@
 server:
-  port: 5000
+  port: 80
 
 spring:
   application:
@@ -9,21 +9,13 @@ zuul:
   routes:
     user-service:
       path: /api/v1/users/**
-      url: http://user-service.us-east-2.elasticbeanstalk.com/api/v1/user
+      url: http://ec2-18-191-213-25.us-east-2.compute.amazonaws.com:5000/api/v1/user
     sms-service:
       path: /api/v1/sms/**
-      url: http://sms-service.us-east-2.elasticbeanstalk.com/api/v1/sms
+      url: http://ec2-18-191-213-25.us-east-2.compute.amazonaws.com:3000/api/v1/sms
     meeting:
       path: /api/v1/meeting/**
-      url: http://meeting-service.us-east-2.elasticbeanstalk.com/api/v1/meeting
-    meeting:
-      path: /api/v1/meetingResponse/**
-      url: http://meeting-service.us-east-2.elasticbeanstalk.com/api/v1/meetingResponse
+      url: http://ec2-18-191-213-25.us-east-2.compute.amazonaws.com:4000/api/v1/meeting
     status:
       path: /api/v1/status/**
-      url: http://meeting-service.us-east-2.elasticbeanstalk.com/api/v1/status
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://registry.us-east-2.elasticbeanstalk.com/eureka
+      url: http://ec2-18-191-213-25.us-east-2.compute.amazonaws.com:4000/api/v1/status

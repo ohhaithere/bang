@@ -15,5 +15,10 @@ services:
     restart: always
     ports:
       - 4000:4000
+  gateway-service:
+    build: gateway-service
+    restart: always
+    ports:
+      - 80:80
 
 

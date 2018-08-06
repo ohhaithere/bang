@@ -10,7 +10,6 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
  * Created by Igor_Usachev on 3/28/2017.
  */
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableZuulProxy
 public class Application {
 
